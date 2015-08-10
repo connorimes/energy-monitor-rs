@@ -3,6 +3,8 @@ use super::EnergyMonitor;
 #[derive(Copy, Clone, Debug)]
 pub struct DummyEnergyMonitor;
 
+pub const DUMMY_ENERGY_MONITOR: DummyEnergyMonitor = DummyEnergyMonitor;
+
 impl EnergyMonitor for DummyEnergyMonitor {
     fn read_uj(&self) -> Result<u64, &'static str> {
         Ok(0)
@@ -17,21 +19,14 @@ impl EnergyMonitor for DummyEnergyMonitor {
     }
 }
 
-impl Default for DummyEnergyMonitor {
-    fn default() -> DummyEnergyMonitor {
-        DummyEnergyMonitor
-    }
-}
-
 #[cfg(test)]
 mod test {
-    use super::DummyEnergyMonitor;
+    use super::DUMMY_ENERGY_MONITOR;
     use super::super::EnergyMonitor;
 
     #[test]
     fn test() {
-        let em = DummyEnergyMonitor::default();
-        assert!(em.interval_us() == 1);
-        assert!(em.read_uj().unwrap() == 0);
+        assert!(DUMMY_ENERGY_MONITOR.interval_us() == 1);
+        assert!(DUMMY_ENERGY_MONITOR.read_uj().unwrap() == 0);
     }
 }
