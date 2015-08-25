@@ -13,6 +13,6 @@ pub trait EnergyMonitor {
     fn source(&self) -> String;
 
     /// Get the energy monitor's refresh interval in microseconds.
-    /// This cna be used as a minimum polling period.
+    /// This can be used as a minimum polling period.
     fn interval_us(&self) -> u64;
 }
