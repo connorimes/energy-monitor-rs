@@ -11,5 +11,5 @@ Add `energy-monitor` as a dependency in `Cargo.toml`:
 
 ```toml
 [dependencies.energy-monitor]
-git = "https://github.com/connorimes/energy-monitor-rs.git"
+git = "https://github.com/energymon/energy-monitor-rs.git"
 ```
