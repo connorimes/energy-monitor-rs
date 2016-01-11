@@ -12,7 +12,7 @@ Add `energy-monitor` as a dependency in `Cargo.toml`:
 
 ```toml
 [dependencies]
-energy-monitor = "0.1.0"
+energy-monitor = "0.1"
 ```
 
 ## License
