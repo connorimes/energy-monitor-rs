@@ -17,6 +17,14 @@ impl EnergyMonitor for DummyEnergyMonitor {
     fn interval_us(&self) -> u64 {
         1
     }
+
+    fn precision_uj(&self) -> u64 {
+        1
+    }
+
+    fn is_exclusive(&self) -> bool {
+        false
+    }
 }
 
 #[cfg(test)]
@@ -27,6 +35,8 @@ mod test {
     #[test]
     fn test() {
         assert!(DUMMY_ENERGY_MONITOR.interval_us() == 1);
+        assert!(DUMMY_ENERGY_MONITOR.precision_uj() == 1);
+        assert!(DUMMY_ENERGY_MONITOR.is_exclusive() == false);
         assert!(DUMMY_ENERGY_MONITOR.read_uj().unwrap() == 0);
     }
 }

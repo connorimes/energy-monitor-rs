@@ -15,4 +15,10 @@ pub trait EnergyMonitor {
     /// Get the energy monitor's refresh interval in microseconds.
     /// This can be used as a minimum polling period.
     fn interval_us(&self) -> u64;
+
+    /// Get the energy monitor's precision in microjoules.
+    fn precision_uj(&self) -> u64;
+
+    /// Get whether energy monitor requires exclusive access.
+    fn is_exclusive(&self) -> bool;
 }
